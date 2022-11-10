@@ -6,7 +6,7 @@ IS_NUMBER() {
   DATA=$($PSQL "SELECT * FROM elements INNER JOIN properties USING(atomic_number) INNER JOIN types USING(type_id) WHERE atomic_number = $1")
   if [[ -z $DATA ]]
   then
-    echo "I could not find that element in the database"
+    echo "I could not find that element in the database."
   else
     # display the data
     echo "$DATA" | while read TID BAR ANUMBER BAR SYMBOL BAR NAME BAR AMASS BAR MPOINT BAR BPOINT BAR TYPE
@@ -21,7 +21,7 @@ IS_STRING() {
   DATA=$($PSQL "SELECT * FROM elements INNER JOIN properties USING(atomic_number) INNER JOIN types USING(type_id) WHERE symbol = '$1' OR name = '$1'")
   if [[ -z $DATA ]]
   then
-    echo "I could not find that element in the database"
+    echo "I could not find that element in the database."
   else
     # display the data
     echo "$DATA" | while read TID BAR ANUMBER BAR SYMBOL BAR NAME BAR AMASS BAR MPOINT BAR BPOINT BAR TYPE
