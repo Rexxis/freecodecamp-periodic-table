@@ -34,10 +34,10 @@ IS_STRING() {
 # argument conditional
 if [[ "$1" =~ ^[0-9]+$ ]]
 then
-  IS_NUMBER "$1" >&2
+  IS_NUMBER "$1"
 elif [[ "$1" =~ ^[A-Za-z]+$ ]]
 then
-  IS_STRING "$1" >&2
+  IS_STRING "$1"
 else
   echo Please provide an element as an argument.
 fi
